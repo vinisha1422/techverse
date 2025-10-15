@@ -1,0 +1,102 @@
+🎨 style.css
+
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #0a0a2a, #1e1e5a);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 25% 25%, #6a5acd, transparent 25%),
+                radial-gradient(circle at 75% 75%, #00ffff, transparent 25%);
+    animation: moveGradient 8s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moveGradient {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-25%, -25%); }
+    100% { transform: translate(0, 0); }
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+}
+
+
+.animate-text {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #00ffff, #6a5acd);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: slideIn 2s ease forwards;
+}
+
+.animate-fade {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeIn 3s ease 1s forwards;
+}
+
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: #00ffff;
+    color: #0a0a2a;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #6a5acd;
+    color: white;
+}
+
+
+@keyframes slideIn {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+#about {
+    padding: 60px 20px;
+    background: #f4f4f4;
+    color: #222;
+    text-align: center;
+}
